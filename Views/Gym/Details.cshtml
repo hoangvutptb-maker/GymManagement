@@ -1,0 +1,24 @@
+﻿@model Member
+@{
+    ViewData["Title"] = "Chi tiết hội viên";
+}
+
+<div class="card">
+    <div class="card-header bg-info text-white"><h3>Chi tiết hội viên: @Model.Name</h3></div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+            <dt class="col-sm-3">Số điện thoại</dt>
+            <dd class="col-sm-9">@Model.Phone</dd>
+            <dt class="col-sm-3">Gói đăng ký</dt>
+            <dd class="col-sm-9">@Model.MembershipType</dd>
+            <dt class="col-sm-3">Giá tiền</dt>
+            <dd class="col-sm-9">@Model.Price.ToString("N0") VNĐ</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </div>
+</div>
