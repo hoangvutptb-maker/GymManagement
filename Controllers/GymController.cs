@@ -26,8 +26,7 @@ namespace GymManagement.Controllers
             // Nếu searchString không rỗng, thêm điều kiện lọc
             if (!string.IsNullOrEmpty(searchString))
             {
-                membersQuery = membersQuery.Where(s => 
-                    s.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase));
+                membersQuery = membersQuery.Where(s => s.Name.Contains(searchString));
             }
 
             // Thực thi truy vấn bất đồng bộ và trả về danh sách
